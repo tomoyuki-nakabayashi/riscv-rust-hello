@@ -3,7 +3,7 @@
 
 static HELLO: &[u8] = b"Hello from Rust!";
 
-#[link_section = ".reset.boot"]
+//#[link_section = ".reset.boot"]
 #[no_mangle]
 pub extern "C" fn __start_rust() -> ! {
     print_hello();

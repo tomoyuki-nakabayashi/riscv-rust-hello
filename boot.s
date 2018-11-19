@@ -1,5 +1,5 @@
 .option norvc
-.section .boot, "ax",@progbits
+.section .reset.boot, "ax",@progbits
 .global _start
 .global abort
 
@@ -11,6 +11,6 @@ _start:
     j       __start_rust
 
 .bss
-    .global stacks
+
 stacks:
     .skip 1024
