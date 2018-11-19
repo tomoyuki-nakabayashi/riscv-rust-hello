@@ -10,9 +10,6 @@ _start:
     /* Now jump to the rust world; __start_rust.  */
     j       __start_rust
 
-abort:
-    j      abort
-
 .bss
     .global stacks
 stacks:

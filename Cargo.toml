@@ -4,3 +4,6 @@ version = "0.1.0"
 authors = ["tomoyuki-nakabayashi <tomo.wait.for.it.yuki@gmail.com>"]
 
 [dependencies]
+
+[build-dependencies]
+cc = "1.0.25"
