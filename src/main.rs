@@ -1,23 +1,16 @@
 #![no_main]
 #![no_std]
 
-static HELLO: &[u8] = b"Hello from Rust!";
-
-//#[link_section = ".reset.boot"]
 #[no_mangle]
 pub extern "C" fn __start_rust() -> ! {
-    print_hello();
-
-    loop{}
-}
-
-fn print_hello() {
-    let uart_16550 = 0x1001_3000  as *mut u8;
-    for c in HELLO {
+    let uart = 0x1001_3000  as *mut u8;
+    for c in b"Hello from Rust!".iter() {
         unsafe {
-            *uart_16550 = *c as u8;
+            *uart = *c as u8;
         }
     }
+
+    loop{}
 }
 
 use core::panic::PanicInfo;
